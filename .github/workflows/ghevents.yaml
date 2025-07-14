@@ -1,12 +1,12 @@
-name: workflow events used in giyhub actions
+name: workflow events used in GitHub Actions
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/1 * * * *" # Every minute
 
 jobs:
   testjob:
     runs-on: ubuntu-latest
     steps:
-      - name: hellogreet
-        run: echo "hello schedule_event"
+      - name: Hello Greet
+        run: echo "Hello from schedule_event"
