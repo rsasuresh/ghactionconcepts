@@ -1,6 +1,9 @@
 name: workflow events used in giyhub actions
 
-on: workflow_dispatch
+# on: workflow_dispatch
+on:
+  schedule:
+    - cron: "*/1 * * * *"
 
 jobs:
   testjob:
