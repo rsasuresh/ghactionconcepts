@@ -1,0 +1,10 @@
+name: workflow events used in giyhub actions
+
+on: workflow_dispatch
+
+jobs:
+  testjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hellogreet
+        run: echo "hello workflowdispatch_event"
