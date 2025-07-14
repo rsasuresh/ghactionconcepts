@@ -1,12 +1,14 @@
 name: workflow events used in GitHub Actions
 
-on:
-  schedule:
-    - cron: "*/1 * * * *" # Every minute
+# on:
+#   schedule:
+#     - cron: "*/1 * * * *" # Every minute
+
+on: pull_request
 
 jobs:
   testjob:
     runs-on: ubuntu-latest
     steps:
       - name: Hello Greet
-        run: echo "Hello from schedule_event"
+        run: echo "Hello from pull request event"
