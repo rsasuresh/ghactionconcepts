@@ -1,6 +1,5 @@
 name: workflow events used in giyhub actions
 
-# on: workflow_dispatch
 on:
   schedule:
     - cron: "*/1 * * * *"
@@ -10,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: hellogreet
-        run: echo "hello workflowdispatch_event"
+        run: echo "hello schedule_event"
