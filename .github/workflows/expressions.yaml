@@ -1,0 +1,26 @@
+name: workflow-expressions
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        default: false
+
+jobs:
+  echo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "[debug] Print Starup Data"
+        if: ${{ inputs.debug }}
+        run: |
+          echo "Triggered By: ${{ github.event }}"
+          echo "Branch: ${{ github.base_ref }}"
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "Runner os: ${{ runner.os }}"
+      - name: "[debug] Print when triggered from Main"
+        if: ${{inputs.debug &&  github.ref == 'refs/head/main' }}
+        run: echo "I was Triggered from Main"
+      - name: Greeting
+        run: echo "Hello World"
