@@ -1,0 +1,16 @@
+name: github actions contexts
+
+on: push
+
+env:
+  environment: "production"
+
+jobs:
+  Contexts_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: contexts data
+        run: |
+          echo "printing event name: ${{ github.event_name }}"
+          echo "Runner operating system: ${{ runner.os }}"
+          echo "Environment data: ${{ env.environment }}"
